@@ -1,0 +1,7 @@
+.two-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid red;
+    margin: 15px 0px;
+    padding: 40px 0px;
+}

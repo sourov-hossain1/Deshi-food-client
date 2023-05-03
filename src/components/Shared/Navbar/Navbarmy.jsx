@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Navbarmy = () => {
@@ -15,10 +15,10 @@ const Navbarmy = () => {
             <Link to="/blog" className='text-decoration-none'>Blog</Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            <Link to="/login">  <Button variant="primary">Login</Button></Link>
+            <Link eventKey={2} to="/logout">
+              <Button variant="danger">Logout</Button>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
