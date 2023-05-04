@@ -7,6 +7,7 @@ import Home from "../components/Home/Home";
 import Blog from "../components/Shared/Navbar/Blog";
 import Login from "../components/Login/Login";
 import Logout from "../components/Logout/Logout";
+import Register from "../components/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
             {
                 path: "/logout",
                 element: <Logout></Logout>
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
             }
         ]
     }

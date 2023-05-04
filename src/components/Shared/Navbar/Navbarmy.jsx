@@ -16,23 +16,23 @@ const Navbarmy = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link>
-              <Link to="/" className='text-decoration-none text-white'>Home</Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link to="/blog" className='text-decoration-none text-white'>Blog</Link>
-            </Nav.Link>
+
+            <Link to="/" className='text-decoration-none text-white'>Home</Link>
+
+
+            <Link to="/blog" className='text-decoration-none text-white'>Blog</Link>
+
           </Nav>
           <Nav>
-            <Nav.Link>
-              {user && <Link className='text-decoration-none text-white'>
-                <FaUserCircle style={{ fontSize: '1.5rem' }}></FaUserCircle>
-              </Link>}
-            </Nav.Link>
-            <Nav.Link>
-              {user ? <Link to='/logout' className='text-decoration-none text-white'>LogOut</Link>:
-              <Link to="/login" className='text-decoration-none text-white'> Login</Link>}
-            </Nav.Link>
+
+            {user &&
+              <FaUserCircle style={{ fontSize: '1.5rem' }}></FaUserCircle>
+            }
+
+
+            {user ? <Link to='/logout' className='text-decoration-none text-white me-4'>LogOut</Link>:
+            <Link to="/login" className='text-decoration-none text-white'> Login</Link>}
+
           </Nav>
         </Navbar.Collapse>
       </Container>
