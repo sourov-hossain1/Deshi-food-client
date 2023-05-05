@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const {signIn, googleSignIn} = useContext(AuthContext);
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -22,6 +22,21 @@ const Login = () => {
         })
         .catch(error =>{
             console.log(error);
+        })
+
+    }
+
+    const handleGoogleSignIn = event =>{
+
+        event.preventDefault();
+
+        googleSignIn()
+        .then(result =>{
+            const googleUser = result.user;
+            console.log(googleUser);
+        })
+        .catch(error =>{
+            console.log(error)
         })
     }
 
@@ -46,8 +61,8 @@ const Login = () => {
                     Don't have an account ? <Link to="/register">Register</Link>
                 </Form.Text>
             </Form>
-            <div className='mt-4'>
-                <Button variant="outline-primary"> <FaGoogle /> Login with Google</Button> <br />
+            <div className='mt-4 mb-4'>
+                <Button onClick={handleGoogleSignIn} variant="outline-primary"> <FaGoogle /> Login with Google</Button> <br />
                 <Button variant="outline-secondary" className='mt-2'> <FaGithub /> Login with Github</Button>
             </div>
         </Container>
