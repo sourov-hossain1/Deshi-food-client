@@ -34,6 +34,9 @@ const Home = () => {
                                         This is a wider card with supporting text below as a natural lead-in
                                         to additional content. This content is a little bit longer.
                                     </Card.Text>
+                                    <p>Experience: {food.experience}</p>
+                                    <p>Number of Recipes: {food.number}</p>
+                                    <p>Likes: 345</p>
                                 </Card.Body>
                                 <Card.Footer>
                                     <small className="text-muted"> 

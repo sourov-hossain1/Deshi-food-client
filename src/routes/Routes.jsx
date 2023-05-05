@@ -9,6 +9,7 @@ import Login from "../components/Login/Login";
 import Logout from "../components/Logout/Logout";
 import Register from "../components/Register/Register";
 import Details from "../components/Details/Details";
+import Error from "../components/Error/Error";
 
 const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5173/food//${params.id}`)
             }
         ]
+    },
+    {
+        path: "/*",
+        element: <Error></Error>
     }
 
 ]);
