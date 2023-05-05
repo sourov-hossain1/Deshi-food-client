@@ -7,7 +7,13 @@ import { FaUserCircle } from 'react-icons/fa';
 
 const Navbarmy = () => {
 
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+    .then()
+    .catch(error => console.log(error))
+  }
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -25,12 +31,12 @@ const Navbarmy = () => {
           </Nav>
           <Nav>
 
-            {user &&
+              <div>
               <FaUserCircle style={{ fontSize: '1.5rem' }}></FaUserCircle>
-            }
+              </div>
 
 
-            {user ? <Link to='/logout' className='text-decoration-none text-white me-4'>LogOut</Link>:
+            {user ? <Button className='text-decoration-none text-white me-4' onClick={handleLogOut}>LogOut</Button>:
             <Link to="/login" className='text-decoration-none text-white'> Login</Link>}
 
           </Nav>
