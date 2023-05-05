@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             {
                 path: "details/:id",
                 element: <Details></Details>,
-                loader: ({params}) => fetch(`http://localhost:5173/food//${params.id}`)
+                loader: ({params}) => fetch(`https://server-assignment-ten-sourov-hossain1.vercel.app/food/${params.id}`)
             }
         ]
     },

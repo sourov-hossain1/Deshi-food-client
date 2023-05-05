@@ -7,7 +7,7 @@ const Home = () => {
 
     const [foods, setFoods] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/food')
+        fetch('https://server-assignment-ten-sourov-hossain1.vercel.app/food')
             .then(res => res.json())
             .then(data => setFoods(data))
             .catch(error => console.log(error))
@@ -31,8 +31,7 @@ const Home = () => {
                                 <Card.Body>
                                     <Card.Title>{food.name}</Card.Title>
                                     <Card.Text>
-                                        This is a wider card with supporting text below as a natural lead-in
-                                        to additional content. This content is a little bit longer.
+                                        {food.details}
                                     </Card.Text>
                                     <p>Experience: {food.experience}</p>
                                     <p>Number of Recipes: {food.number}</p>
