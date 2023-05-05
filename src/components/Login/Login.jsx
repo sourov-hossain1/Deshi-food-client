@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
-    const {signIn, googleSignIn} = useContext(AuthContext);
+    const {signIn, googleSignIn, githubSignIn} = useContext(AuthContext);
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -40,6 +40,19 @@ const Login = () => {
         })
     }
 
+    const githubSigned = event =>{
+        event.preventDefault();
+
+        githubSignIn()
+        .then(result =>{
+            const gitLogged = result.user;
+            console.log(gitLogged);
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+    }
+
     return (
         <Container className='mx-auto w-25'>
             <h2>Please Login</h2>
@@ -63,7 +76,7 @@ const Login = () => {
             </Form>
             <div className='mt-4 mb-4'>
                 <Button onClick={handleGoogleSignIn} variant="outline-primary"> <FaGoogle /> Login with Google</Button> <br />
-                <Button variant="outline-secondary" className='mt-2'> <FaGithub /> Login with Github</Button>
+                <Button onClick={githubSigned} variant="outline-secondary" className='mt-2'> <FaGithub /> Login with Github</Button>
             </div>
         </Container>
     );
