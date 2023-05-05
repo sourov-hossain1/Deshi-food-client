@@ -1,0 +1,10 @@
+.register-degin{
+    width: 25%;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 576px){
+    .register-degin{
+        width: 100%;
+    }
+}

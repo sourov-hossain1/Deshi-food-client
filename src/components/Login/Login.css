@@ -5,3 +5,13 @@
 .login-form button{
     margin-bottom: 8px;
 }
+.form-design{
+    justify-content: center;
+    width: 25%;
+}
+
+@media only screen and (max-width: 576px){
+    .form-design{
+        width: 100%;
+    }
+}

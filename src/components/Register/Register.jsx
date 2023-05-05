@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
+import './Register.css';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProvider';
 
@@ -27,7 +28,7 @@ const Register = () => {
     }
 
     return (
-        <Container className='mx-auto w-25'>
+        <Container className='register-degin'>
             <h2> Register Form</h2>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
