@@ -1,9 +1,15 @@
 .two-section{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    border: 1px solid red;
+    border: 1px solid darkblue;
     margin: 15px 0px;
-    padding: 40px 0px;
+    border-radius: 4px;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+.two-section img{
+    border-radius: 4px;
 }
 .mid-content{
     display: grid;
@@ -22,5 +28,8 @@
     .mid-content{
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
+    }
+    .two-section{
+        grid-template-columns: repeat(1, 1fr)
     }
 }

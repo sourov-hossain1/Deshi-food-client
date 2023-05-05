@@ -8,6 +8,7 @@ import Blog from "../components/Shared/Navbar/Blog";
 import Login from "../components/Login/Login";
 import Logout from "../components/Logout/Logout";
 import Register from "../components/Register/Register";
+import Details from "../components/Details/Details";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
+            },
+            {
+                path: "details/:id",
+                element: <Details></Details>,
+                loader: ({params}) => fetch(`http://localhost:5173/food//${params.id}`)
             }
         ]
     }

@@ -17,7 +17,7 @@ const Navbarmy = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
 
-            <Link to="/" className='text-decoration-none text-white'>Home</Link>
+            <Link to="/" className='text-decoration-none text-white me-2'>Home</Link>
 
 
             <Link to="/blog" className='text-decoration-none text-white'>Blog</Link>
